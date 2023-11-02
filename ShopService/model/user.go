@@ -6,7 +6,7 @@ import (
 )
 
 type BaseModel struct {
-	ID        int32 `gorm:"primarykey"`
+	ID        uint32 `gorm:"primarykey"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt
@@ -20,5 +20,5 @@ type User struct {
 	Nickname string     `gorm:"type:varchar(20)"`
 	Birthday *time.Time `gorm:"type:datetime"`
 	Gender   string     `gorm:"column:gender;default:male;type:varchar(6)"`
-	Role     int        `gorm:"column:role;default:1;type:int comment'1表示普通用户，2表示管理员'"`
+	Role     uint32     `gorm:"column:role;default:1;type:int comment'1表示普通用户，2表示管理员'"`
 }
