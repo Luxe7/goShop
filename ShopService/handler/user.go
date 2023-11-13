@@ -2,12 +2,17 @@ package handler
 
 import (
 	"context"
+	"crypto/sha512"
+	"github.com/anaskhan96/go-password-encoder"
 	"goShop/ShopService/global"
 	"goShop/ShopService/model"
 	"goShop/ShopService/proto"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"google.golang.org/protobuf/types/known/emptypb"
 	"gorm.io/gorm"
+	"strings"
+	"time"
 )
 
 type UserServer struct {
@@ -91,4 +96,29 @@ func (s UserServer) GetUserByID(ctx context.Context, req *proto.IdRequest) (*pro
 	userInfoRsp := ModelToResponse(user)
 	return &userInfoRsp, nil
 
+}
+func (s UserServer) UpdateUser(ctx context.Context, req *proto.UpdateUserInfo) (*emptypb.Empty, error) {
+	//个人中心更新用户
+	var user model.User
+	result := global.DB.First(&user, req.Id)
+	if result.RowsAffected == 0 {
+		return nil, status.Errorf(codes.AlreadyExists, "用户已存在")
+	}
+	birthday := time.Unix(int64(req.Birthday), 0)
+	user.Birthday = &birthday
+	user.ID = req.Id
+	user.Gender = req.Gender
+
+	result = global.DB.Save(user)
+	if result.Error != nil {
+		return nil, status.Errorf(codes.Internal, result.Error.Error())
+	}
+	return &emptypb.Empty{}, nil
+}
+func (s UserServer) CheckPassWord(ctx context.Context, req *proto.PassWordCheckInfo) (*proto.CheckResponse, error) {
+	//这个地方的逻辑应该是写错了，因为oldpassword也是加密过的字符串，应该分割出来，最后一部分才是密文
+	options := &password.Options{16, 100, 32, sha512.New}
+	passwordInfo := strings.Split(req.Newpassword, "$")
+	check := password.Verify(req.Oldpassword, passwordInfo[1], passwordInfo[2], options)
+	return &proto.CheckResponse{Success: check}, nil
 }

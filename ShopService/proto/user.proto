@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "google/protobuf/empty.proto";
 option go_package = ".;proto";
+
 service User{
   rpc GetUserList(PageInfo) returns(UserListResponse);//用户列表
   rpc GetUserByMobile(MobileRequest)returns(UserInfoResponse);//通过电话号码查询用户
@@ -9,6 +10,7 @@ service User{
   rpc UpdateUser(UpdateUserInfo)returns(google.protobuf.Empty);
   rpc CheckPassWord(PassWordCheckInfo)returns(CheckResponse);//检查密码
 }
+
 message PageInfo{
   uint32 pN =1;
   uint32 pSize=2;

@@ -27,6 +27,9 @@ func main() {
 	salt, encodedPwd := password.Encode("generic password", options)
 	genPassword := fmt.Sprintf("pbkdf2-sha512$%s$%s", salt, encodedPwd)
 	passwordInfo := strings.Split(genPassword, "$")
+	for _, s := range passwordInfo {
+		println(s)
+	}
 	check := password.Verify("generic password", passwordInfo[1], passwordInfo[2], options)
 	fmt.Println(check) // true
 
