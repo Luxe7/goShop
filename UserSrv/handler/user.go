@@ -4,9 +4,9 @@ import (
 	"context"
 	"crypto/sha512"
 	"github.com/anaskhan96/go-password-encoder"
-	"goShop/ShopService/global"
-	"goShop/ShopService/model"
-	"goShop/ShopService/proto"
+	"goShop/UserSrv/global"
+	"goShop/UserSrv/model"
+	"goShop/UserSrv/proto"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
@@ -16,6 +16,7 @@ import (
 )
 
 type UserServer struct {
+	proto.UnimplementedUserServer
 }
 
 func ModelToResponse(user model.User) proto.UserInfoResponse {
