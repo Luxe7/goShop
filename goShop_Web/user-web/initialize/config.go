@@ -11,7 +11,7 @@ import (
 func InitConfig() {
 
 	configFilePrefix := "config"
-	configFileName := fmt.Sprintf("user-web/%s-debug.yaml", configFilePrefix)
+	configFileName := fmt.Sprintf("%s-debug.yaml", configFilePrefix)
 
 	v := viper.New()
 	//文件的路径如何设置

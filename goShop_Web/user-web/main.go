@@ -14,7 +14,7 @@ func main() {
 	//初始化routers
 	Router := initialize.Routers()
 	initialize.InitConfig()
-
+	_ = initialize.InitTrans("zh")
 	//logger, _ := zap.NewProduction()
 	//defer logger.Sync() //这个应该是刷入缓存的
 	//sugar := logger.Sugar()

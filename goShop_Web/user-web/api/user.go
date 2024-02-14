@@ -3,19 +3,30 @@ package api
 import (
 	"context"
 	"fmt"
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
+	"go.uber.org/zap"
+	"goShop_Web/forms"
 	"goShop_Web/global"
 	"goShop_Web/global/response"
+	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"net/http"
+	"strconv"
+	"strings"
 	"time"
-
-	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
-	"google.golang.org/grpc"
 
 	"goShop_Web/proto"
 )
+
+func removeTopStruct(fileds map[string]string) map[string]string {
+	rsp := map[string]string{}
+	for field, err := range fileds {
+		rsp[field[strings.Index(field, ".")+1:]] = err
+	}
+	return rsp
+}
 
 func HandleGrpcErrorToHttp(err error, c *gin.Context) {
 	//将grpc的状态码转换为http的状态码
@@ -43,6 +54,18 @@ func HandleGrpcErrorToHttp(err error, c *gin.Context) {
 		}
 	}
 }
+func HandleValidatorError(c *gin.Context, err error) {
+	errs, ok := err.(validator.ValidationErrors)
+	if !ok {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": err.Error(),
+		})
+	}
+	c.JSON(http.StatusBadRequest, gin.H{
+		"error": removeTopStruct(errs.Translate(global.Trans)),
+	})
+	return
+}
 func GetUserList(ctx *gin.Context) {
 	zap.S().Debug("获取用户列表页")
 	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", global.ServerConfig.UserSrvConfig.Host, global.ServerConfig.UserSrvConfig.Port), grpc.WithInsecure())
@@ -50,9 +73,15 @@ func GetUserList(ctx *gin.Context) {
 		zap.S().Errorw("[GetUserList] connect gRpc failed", "msg", err.Error())
 	}
 	userSrvClient := proto.NewUserClient(userConn)
+
+	pn := ctx.DefaultQuery("pn", "0")
+	pnInt, _ := strconv.Atoi(pn)
+	pSize := ctx.DefaultQuery("psize", "0")
+	pSizeInt, _ := strconv.Atoi(pSize)
+
 	rsp, err := userSrvClient.GetUserList(context.Background(), &proto.PageInfo{
-		PN:    0,
-		PSize: 0,
+		PN:    uint32(pnInt),
+		PSize: uint32(pSizeInt),
 	})
 	if err != nil {
 		zap.S().Errorw("[GetUserList] require UserList failed")
@@ -79,4 +108,12 @@ func GetUserList(ctx *gin.Context) {
 		result = append(result, user)
 	}
 	ctx.JSON(http.StatusOK, result)
+}
+func PassWordLogin(c *gin.Context) {
+	//表单验证
+	passwordLoginForm := forms.PassWordLoginForm{}
+	if err := c.ShouldBind(&passwordLoginForm); err != nil {
+		HandleValidatorError(c, err)
+		return
+	}
 }
