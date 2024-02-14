@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../goShop_Web/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/config/config.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/global/global.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/handler/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/initialize/db.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/initialize/logger.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/model/main/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/model/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/proto/user.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/proto/user.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/proto/user_grpc.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UserSrv/tests/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +32,27 @@
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "C:/Users/fathe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/UserSrv/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
