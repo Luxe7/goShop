@@ -22,9 +22,11 @@ import (
 func main() {
 	IP := flag.String("ip", "0.0.0.0", "IP地址")
 	Port := flag.Int("port", 50051, "端口号")
+
 	flag.Parse()
 	fmt.Println("Ip:", *IP)
 	fmt.Println("Port:", *Port)
+
 	server := grpc.NewServer()
 	proto.RegisterUserServer(server, &handler.UserServer{})
 

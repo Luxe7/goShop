@@ -3,6 +3,7 @@ package handler
 import (
 	"context"
 	"crypto/sha512"
+	"fmt"
 	"github.com/anaskhan96/go-password-encoder"
 	"goShop/UserSrv/global"
 	"goShop/UserSrv/model"
@@ -22,17 +23,17 @@ type UserServer struct {
 func ModelToResponse(user model.User) proto.UserInfoResponse {
 	//在grpc的message中字段有默认值，不能随便nil进去，否则会报错
 	//需要分清哪些有默认值
-	UserInfoResponse := proto.UserInfoResponse{
+	UserInfoResp := proto.UserInfoResponse{
 		Id:       user.ID,
-		Password: user.Password,
+		PassWord: user.Password,
 		NickName: user.Nickname,
 		Gender:   user.Gender,
 		Role:     user.Role,
 	}
 	if user.Birthday != nil {
-		UserInfoResponse.Birthday = uint64(user.Birthday.Unix())
+		UserInfoResp.Birthday = uint64(user.Birthday.Unix())
 	}
-	return UserInfoResponse
+	return UserInfoResp
 }
 
 func Paginate(page, pageSize int) func(db *gorm.DB) *gorm.DB {
@@ -117,9 +118,27 @@ func (s UserServer) UpdateUser(ctx context.Context, req *proto.UpdateUserInfo) (
 	return &emptypb.Empty{}, nil
 }
 func (s UserServer) CheckPassWord(ctx context.Context, req *proto.PassWordCheckInfo) (*proto.CheckResponse, error) {
-	//这个地方的逻辑应该是写错了，因为oldpassword也是加密过的字符串，应该分割出来，最后一部分才是密文
 	options := &password.Options{16, 100, 32, sha512.New}
-	passwordInfo := strings.Split(req.Newpassword, "$")
-	check := password.Verify(req.Oldpassword, passwordInfo[1], passwordInfo[2], options)
+	passwordInfo := strings.Split(req.EncryptedPassword, "$")
+	check := password.Verify(req.Password, passwordInfo[1], passwordInfo[2], options)
 	return &proto.CheckResponse{Success: check}, nil
+}
+
+func (s UserServer) CreateUser(ctx context.Context, req *proto.CreateUserInfo) (*proto.UserInfoResponse, error) {
+	var user model.User
+	result := global.DB.Where(&model.User{Mobil: req.Mobile}).First(&user)
+	if result.RowsAffected == 1 {
+		return nil, status.Errorf(codes.AlreadyExists, "用户已存在")
+	}
+	user.Mobil = req.Mobile
+	user.Nickname = req.NickName
+	options := &password.Options{16, 100, 32, sha512.New}
+	salt, encodedPwd := password.Encode(req.Password, options)
+	user.Password = fmt.Sprintf("pbkdf2-sha512$%s$%s", salt, encodedPwd)
+	result = global.DB.Create(&user)
+	if result.Error != nil {
+		return nil, status.Errorf(codes.Internal, result.Error.Error())
+	}
+	userInfoRsp := ModelToResponse(user)
+	return &userInfoRsp, nil
 }
