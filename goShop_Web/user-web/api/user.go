@@ -116,4 +116,46 @@ func PassWordLogin(c *gin.Context) {
 		HandleValidatorError(c, err)
 		return
 	}
+	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", global.ServerConfig.UserSrvConfig.Host, global.ServerConfig.UserSrvConfig.Port), grpc.WithInsecure())
+	if err != nil {
+		zap.S().Errorw("[GetUserList] connect gRpc failed", "msg", err.Error())
+	}
+	//生成grpc的client并调用接口
+	userSrvClient := proto.NewUserClient(userConn)
+	//登录的逻辑
+	if resp, err := userSrvClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile}); err != nil {
+		if e, ok := status.FromError(err); ok {
+			switch e.Code() {
+			case codes.NotFound:
+				c.JSON(http.StatusBadRequest, map[string]string{
+					"mobile": "用户不存在",
+				})
+			default:
+				c.JSON(http.StatusInternalServerError, map[string]string{
+					"mobile": "登录失败",
+				})
+			}
+		}
+	} else {
+		//只是查询了用户没有检查密码
+		if passResp, passerr := userSrvClient.CheckPassWord(context.Background(), &proto.PassWordCheckInfo{
+			Password:          passwordLoginForm.PassWord,
+			EncryptedPassword: resp.PassWord,
+		}); passerr != nil {
+			c.JSON(http.StatusInternalServerError, map[string]string{
+				"mobile": "登录失败",
+			})
+		} else {
+			if passResp.Success {
+				c.JSON(http.StatusOK, map[string]string{
+					"mobile": "登录成功",
+				})
+			} else {
+				c.JSON(http.StatusBadRequest, map[string]string{
+					"mobile": "密码错误",
+				})
+			}
+		}
+	}
+
 }
