@@ -119,6 +119,13 @@ func PassWordLogin(c *gin.Context) {
 	//表单验证
 	zap.S().Infof("PassWordLogin")
 	passwordLoginForm := forms.PassWordLoginForm{}
+
+	if !stone.Verify(passwordLoginForm.CaptchaID, passwordLoginForm.Captcha, true) {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"captcha": "验证码错误",
+		})
+	}
+
 	if err := c.ShouldBind(&passwordLoginForm); err != nil {
 		zap.S().Debug(err.Error())
 		HandleValidatorError(c, err)
