@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../goShop_Web/user-web/middlewares/jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../goShop_Web/user-web/models/request.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSrv/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/validator/validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/validator/validator.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,21 +30,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/fathe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fathe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />

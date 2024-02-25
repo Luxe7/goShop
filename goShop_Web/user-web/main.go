@@ -6,10 +6,10 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	"goShop_Web/global"
+	myvalidator "goShop_Web/validator"
 
 	"go.uber.org/zap"
 	"goShop_Web/initialize"
-	myvalidator "goShop_Web/validator"
 )
 
 func main() {
@@ -26,7 +26,6 @@ func main() {
 			return ut.Add("mobile", "{0}手机号格式不正确!", true) // see universal-translator for details
 		}, func(ut ut.Translator, fe validator.FieldError) string {
 			t, _ := ut.T("mobile", fe.Field())
-
 			return t
 		})
 	}

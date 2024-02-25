@@ -3,12 +3,15 @@ package api
 import (
 	"context"
 	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"go.uber.org/zap"
 	"goShop_Web/forms"
 	"goShop_Web/global"
 	"goShop_Web/global/response"
+	"goShop_Web/middlewares"
+	"goShop_Web/models"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -111,8 +114,10 @@ func GetUserList(ctx *gin.Context) {
 }
 func PassWordLogin(c *gin.Context) {
 	//表单验证
+	zap.S().Infof("PassWordLogin")
 	passwordLoginForm := forms.PassWordLoginForm{}
 	if err := c.ShouldBind(&passwordLoginForm); err != nil {
+		zap.S().Debug(err.Error())
 		HandleValidatorError(c, err)
 		return
 	}
@@ -124,15 +129,16 @@ func PassWordLogin(c *gin.Context) {
 	userSrvClient := proto.NewUserClient(userConn)
 	//登录的逻辑
 	if resp, err := userSrvClient.GetUserByMobile(context.Background(), &proto.MobileRequest{Mobile: passwordLoginForm.Mobile}); err != nil {
+		zap.S().Errorw(err.Error())
 		if e, ok := status.FromError(err); ok {
 			switch e.Code() {
 			case codes.NotFound:
 				c.JSON(http.StatusBadRequest, map[string]string{
-					"mobile": "用户不存在",
+					"msg": "用户不存在",
 				})
 			default:
 				c.JSON(http.StatusInternalServerError, map[string]string{
-					"mobile": "登录失败",
+					"msg": "登录失败",
 				})
 			}
 		}
@@ -143,16 +149,38 @@ func PassWordLogin(c *gin.Context) {
 			EncryptedPassword: resp.PassWord,
 		}); passerr != nil {
 			c.JSON(http.StatusInternalServerError, map[string]string{
-				"mobile": "登录失败",
+				"msg": "登录失败",
 			})
 		} else {
 			if passResp.Success {
-				c.JSON(http.StatusOK, map[string]string{
-					"mobile": "登录成功",
+				//生成token
+				j := middlewares.NewJWT()
+				claim := models.CustomClaims{
+					ID:          uint(resp.Id),
+					NickName:    resp.NickName,
+					AuthorityId: uint(resp.Role),
+					StandardClaims: jwt.StandardClaims{
+						NotBefore: time.Now().Unix(),               //生效时间
+						ExpiresAt: time.Now().Unix() + 60*60*24*30, //30天过期
+						Issuer:    "luxe7",
+					},
+				}
+				token, err := j.CreateToken(claim)
+				if err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{
+						"msg": "create token failed",
+					})
+					return
+				}
+				c.JSON(http.StatusOK, gin.H{
+					"id":         resp.Id,
+					"nick_name":  resp.NickName,
+					"token":      token,
+					"expires_at": (time.Now().Unix() + 60*60*24*30) * 1000,
 				})
 			} else {
 				c.JSON(http.StatusBadRequest, map[string]string{
-					"mobile": "密码错误",
+					"msg": "密码错误",
 				})
 			}
 		}
