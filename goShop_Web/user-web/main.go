@@ -19,10 +19,15 @@ func main() {
 	initialize.InitConfig()
 	//初始化routers
 	Router := initialize.Routers()
-
+	//初始化翻译
 	_ = initialize.InitTrans("zh")
 	//初始化用户服务连接
 	initialize.InitSrvConn()
+	////获取可用端口，在开发的时候不需要，部署的时候需要在可用端口下监听
+	//port, err := utils.GetFreePort()
+	//if err == nil {
+	//	global.ServerConfig.Port = port
+	//}
 	//注册验证器
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		v.RegisterValidation("mobile", myvalidator.ValidateMobile)

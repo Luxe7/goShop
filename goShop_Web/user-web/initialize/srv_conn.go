@@ -2,14 +2,32 @@ package initialize
 
 import (
 	"fmt"
+
 	"github.com/hashicorp/consul/api"
+	_ "github.com/mbobakov/grpc-consul-resolver"
 	"go.uber.org/zap"
+	"google.golang.org/grpc"
+
 	"goShop_Web/global"
 	"goShop_Web/proto"
-	"google.golang.org/grpc"
 )
 
 func InitSrvConn() {
+	consulInfo := global.ServerConfig.ConsulConfig
+	userConn, err := grpc.Dial(
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.Host, consulInfo.Port, global.ServerConfig.UserSrvConfig.Name),
+		grpc.WithInsecure(),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
+	)
+	if err != nil {
+		zap.S().Fatal("[InitSrvConn] 连接 【用户服务失败】")
+	}
+
+	userSrvClient := proto.NewUserClient(userConn)
+	global.UserSrvClient = userSrvClient
+}
+
+func InitSrvConn2() {
 	//从注册中心获取用户服务的信息
 	cfg := api.DefaultConfig()
 	cfg.Address = fmt.Sprintf("%s:%d", global.ServerConfig.ConsulConfig.Host, global.ServerConfig.ConsulConfig.Port)
