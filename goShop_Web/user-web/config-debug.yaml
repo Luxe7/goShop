@@ -5,3 +5,6 @@ user_srv:
   port : 50051
 jwt :
   key : "lGi7dlWLGZy#jK0d7cb%X&5p9xovDdtL"
+redis:
+  host: "192.168.171.130"
+  port: 6379

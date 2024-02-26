@@ -6,6 +6,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
+	"github.com/go-redis/redis/v8"
 	"go.uber.org/zap"
 	"goShop_Web/forms"
 	"goShop_Web/global"
@@ -195,5 +196,74 @@ func PassWordLogin(c *gin.Context) {
 			}
 		}
 	}
+}
+func Register(ctx *gin.Context) {
+	registerForm := forms.RegisterForm{}
+	if err := ctx.ShouldBind(&registerForm); err != nil {
+		zap.S().Debug(err.Error())
+		HandleValidatorError(ctx, err)
+		return
+	}
+	rdb := redis.NewClient(&redis.Options{
+		Addr: fmt.Sprintf("%s:%d", global.ServerConfig.RedisInfo.Host, global.ServerConfig.RedisInfo.Port),
+	})
+	value, err := rdb.Get(context.Background(), registerForm.Mobile).Result()
+	if err == redis.Nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"msg": "请发送验证码",
+		})
+		return
+	}
+	if value != registerForm.Code {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"msg": "验证码错误",
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"msg": "发送成功",
+	})
+
+	userConn, err := grpc.Dial(fmt.Sprintf("%s:%d", global.ServerConfig.UserSrvConfig.Host, global.ServerConfig.UserSrvConfig.Port), grpc.WithInsecure())
+	if err != nil {
+		zap.S().Errorw("[GetUserList] connect gRpc failed", "msg", err.Error())
+	}
+	userSrvClient := proto.NewUserClient(userConn)
+
+	user, err := userSrvClient.CreateUser(context.Background(), &proto.CreateUserInfo{
+		NickName: registerForm.Mobile,
+		Password: registerForm.PassWord,
+		Mobile:   registerForm.Mobile,
+	})
+	if err != nil {
+		zap.S().Errorw("[GetUserList] Create User failed:%s", err.Error())
+		HandleGrpcErrorToHttp(err, ctx)
+		return
+	}
+	j := middlewares.NewJWT()
+	claim := models.CustomClaims{
+		ID:          uint(user.Id),
+		NickName:    user.NickName,
+		AuthorityId: uint(user.Role),
+		StandardClaims: jwt.StandardClaims{
+			NotBefore: time.Now().Unix(),               //生效时间
+			ExpiresAt: time.Now().Unix() + 60*60*24*30, //30天过期
+			Issuer:    "luxe7",
+		},
+	}
+	token, err := j.CreateToken(claim)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"msg": "create token failed",
+		})
+		return
+	}
+	ctx.JSON(http.StatusOK, gin.H{
+		"id":         user.Id,
+		"nick_name":  user.NickName,
+		"token":      token,
+		"expires_at": (time.Now().Unix() + 60*60*24*30) * 1000,
+	})
 
 }
