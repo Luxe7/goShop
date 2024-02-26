@@ -24,7 +24,7 @@ func TestGetUserList() {
 		PN:    1,
 		PSize: 5,
 	})
-	println(rsp.Total)
+	//println(rsp.Total)
 	if err != nil {
 		panic(err)
 	}

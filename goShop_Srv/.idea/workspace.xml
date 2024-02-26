@@ -5,33 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../goShop_Web/user-web/middlewares/jwt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../goShop_Web/user-web/models/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserSrv/config-debug.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserSrv/initialize/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/initialize/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/initialize/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/main.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tests/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/tests/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/validator/validator.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/validator/validator.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="2cLlI5ksdjBHjoyymIRrCHvARQ9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
@@ -45,7 +61,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
@@ -55,9 +71,19 @@
       <filePath value="$PROJECT_DIR$/UserSrv/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build user.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/UserSrv/tests/user.go" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build user.go" />
       </list>
     </recent_temporary>
   </component>

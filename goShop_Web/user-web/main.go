@@ -15,10 +15,14 @@ import (
 func main() {
 	//初始化logger
 	initialize.InitLogger()
+	//初始化配置文件
+	initialize.InitConfig()
 	//初始化routers
 	Router := initialize.Routers()
-	initialize.InitConfig()
+
 	_ = initialize.InitTrans("zh")
+	//初始化用户服务连接
+	initialize.InitSrvConn()
 	//注册验证器
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		v.RegisterValidation("mobile", myvalidator.ValidateMobile)
