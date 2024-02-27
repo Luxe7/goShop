@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"goShop/UserSrv/utils"
 	"net"
 	"os"
 	"os/signal"
@@ -20,6 +19,7 @@ import (
 	"goShop/UserSrv/handler"
 	"goShop/UserSrv/initialize"
 	"goShop/UserSrv/proto"
+	"goShop/UserSrv/utils"
 )
 
 func main() {

@@ -13,9 +13,9 @@ import (
 )
 
 func InitSrvConn() {
-	consulInfo := global.ServerConfig.ConsulConfig
+	consulInfo := global.ServerConfig.ConsulInfo
 	userConn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.Host, consulInfo.Port, global.ServerConfig.UserSrvConfig.Name),
+		fmt.Sprintf("consul://%s:%d/%s?wait=14s", consulInfo.Host, consulInfo.Port, global.ServerConfig.UserSrvInfo.Name),
 		grpc.WithInsecure(),
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
 	)
@@ -30,7 +30,7 @@ func InitSrvConn() {
 func InitSrvConn2() {
 	//从注册中心获取用户服务的信息
 	cfg := api.DefaultConfig()
-	cfg.Address = fmt.Sprintf("%s:%d", global.ServerConfig.ConsulConfig.Host, global.ServerConfig.ConsulConfig.Port)
+	cfg.Address = fmt.Sprintf("%s:%d", global.ServerConfig.ConsulInfo.Host, global.ServerConfig.ConsulInfo.Port)
 	userSrvHost := ""
 	userSrvPort := 0
 
@@ -38,7 +38,7 @@ func InitSrvConn2() {
 	if err != nil {
 		panic(err)
 	}
-	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf(`Service=="%s"`, global.ServerConfig.UserSrvConfig.Name))
+	data, err := client.Agent().ServicesWithFilter(fmt.Sprintf(`Service=="%s"`, global.ServerConfig.UserSrvInfo.Name))
 	if err != nil {
 		panic(err)
 	}
