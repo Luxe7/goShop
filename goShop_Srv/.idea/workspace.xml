@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UserSrv/config-debug.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserSrv/initialize/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSrv/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/global/global.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSrv/initialize/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/initialize/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSrv/main.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSrv/tests/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/tests/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/api/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config-debug.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/user-web/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

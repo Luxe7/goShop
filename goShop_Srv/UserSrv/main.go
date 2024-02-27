@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 	"os"
 	"os/signal"
@@ -11,15 +13,12 @@ import (
 	"github.com/hashicorp/consul/api"
 	"github.com/satori/go.uuid"
 	"go.uber.org/zap"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/health/grpc_health_v1"
-
 	"goShop/UserSrv/global"
 	"goShop/UserSrv/handler"
 	"goShop/UserSrv/initialize"
 	"goShop/UserSrv/proto"
 	"goShop/UserSrv/utils"
+	"google.golang.org/grpc"
 )
 
 func main() {
