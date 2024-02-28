@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/category.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/goods.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -44,12 +50,17 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/my/goShop/goShop_Srv",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/my/goShop/goShop_Srv/GoodsSrv/proto",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />
+    </key>
+  </component>
   <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
@@ -79,6 +90,9 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
