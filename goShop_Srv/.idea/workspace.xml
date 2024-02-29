@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/base.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/category.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +23,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../Program Files/Go" />
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -50,7 +47,7 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/my/goShop/goShop_Srv/GoodsSrv/proto",
+    "last_opened_file_path": "C:/Users/fathe",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
@@ -61,7 +58,16 @@
       <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build goShop/GoodsSrv/model/main">
+    <configuration name="go build goShop/GoodsSrv/model/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="goShop/GoodsSrv/model/main" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/GoodsSrv/model/main/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
@@ -82,6 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build goShop/GoodsSrv/model/main" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build user.go" />
       </list>
