@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/category.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/goods.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" afterDir="false" />
-    </list>
+    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

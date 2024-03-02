@@ -1,0 +1,16 @@
+{
+  "host":"127.0.0.1",
+  "name": "goods-web",
+  "port": 8021,
+  "tags":["goods","web"],
+  "goods_srv": {
+    "name": "goods-srv"
+  },
+  "jwt": {
+    "key": "lGi7dlWLGZy#jK0d7cb%X&5p9xovDdtL"
+  },
+  "consul": {
+    "host": "192.168.171.130",
+    "port": 8500
+  }
+}
