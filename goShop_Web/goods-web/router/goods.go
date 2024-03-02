@@ -3,8 +3,9 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
-	"goShop_Web/api/goods"
-	"goShop_Web/middlewares"
+
+	"goShop_Web/goods-web/api/goods"
+	"goShop_Web/goods-web/middlewares"
 )
 
 func InitGoodsRouter(router *gin.RouterGroup) {

@@ -2,8 +2,9 @@ package initialize
 
 import (
 	"github.com/gin-gonic/gin"
-	"goShop_Web/middlewares"
-	"goShop_Web/router"
+
+	"goShop_Web/goods-web/middlewares"
+	"goShop_Web/goods-web/router"
 )
 
 func Routers() *gin.Engine {

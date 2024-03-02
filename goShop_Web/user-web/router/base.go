@@ -2,7 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"goShop_Web/api"
+
+	"goShop_Web/user-web/api"
 )
 
 func InitBaseRouter(router *gin.RouterGroup) {

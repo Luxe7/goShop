@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	uuid "github.com/satori/go.uuid"
-	"goShop_Web/utils/register/consul"
 	"os"
 	"os/signal"
 	"syscall"
@@ -13,9 +12,10 @@ import (
 	"github.com/go-playground/validator/v10"
 	"go.uber.org/zap"
 
-	"goShop_Web/global"
-	"goShop_Web/initialize"
-	myvalidator "goShop_Web/validator"
+	"goShop_Web/user-web/global"
+	"goShop_Web/user-web/initialize"
+	"goShop_Web/user-web/utils/register/consul"
+	myvalidator "goShop_Web/user-web/validator"
 )
 
 func main() {

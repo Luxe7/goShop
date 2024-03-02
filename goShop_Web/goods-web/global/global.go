@@ -2,8 +2,9 @@ package global
 
 import (
 	ut "github.com/go-playground/universal-translator"
-	"goShop_Web/config"
-	"goShop_Web/proto"
+
+	"goShop_Web/goods-web/config"
+	"goShop_Web/goods-web/proto"
 )
 
 var (

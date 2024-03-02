@@ -8,8 +8,8 @@ import (
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 
-	"goShop_Web/global"
-	"goShop_Web/proto"
+	"goShop_Web/user-web/global"
+	"goShop_Web/user-web/proto"
 )
 
 func InitSrvConn() {
