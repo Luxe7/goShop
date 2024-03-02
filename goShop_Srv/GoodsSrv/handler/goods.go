@@ -3,15 +3,18 @@ package handler
 import (
 	"context"
 	"fmt"
-	"goShop/GoodsSrv/global"
-	"goShop/GoodsSrv/model"
-	"goShop/GoodsSrv/proto"
+
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
+
+	"goShop/GoodsSrv/global"
+	"goShop/GoodsSrv/model"
+	"goShop/GoodsSrv/proto"
 )
 
 type GoodsServer struct {
+	proto.UnimplementedGoodsServer
 }
 
 func ModelToResponse(goods model.Goods) proto.GoodsInfoResponse {

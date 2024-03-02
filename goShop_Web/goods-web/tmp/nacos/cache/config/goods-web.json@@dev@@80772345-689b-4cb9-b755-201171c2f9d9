@@ -1,5 +1,5 @@
 {
-  "host":"127.0.0.1",
+  "host":"10.66.58.204",
   "name": "goods-web",
   "port": 8021,
   "tags":["goods","web"],

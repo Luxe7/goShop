@@ -3,26 +3,28 @@ package main
 import (
 	"flag"
 	"fmt"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 	"os"
 	"os/signal"
 	"syscall"
 
-	"github.com/hashicorp/consul/api"
-	"github.com/satori/go.uuid"
-	"go.uber.org/zap"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
+
 	"goShop/UserSrv/global"
 	"goShop/UserSrv/handler"
 	"goShop/UserSrv/initialize"
 	"goShop/UserSrv/proto"
 	"goShop/UserSrv/utils"
+
+	"github.com/hashicorp/consul/api"
+	uuid "github.com/satori/go.uuid"
+	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )
 
 func main() {
-	IP := flag.String("ip", "127.0.0.1", "IP地址")
+	IP := flag.String("ip", "10.66.58.204", "IP地址")
 	Port := flag.Int("port", 0, "端口号")
 
 	initialize.InitLogger()
@@ -51,12 +53,12 @@ func main() {
 		panic(err)
 	}
 	//生成对应的检查对象
-	check := &api.AgentServiceCheck{
-		GRPC:                           fmt.Sprintf("%s:%d", "127.0.0.1", *Port),
-		Timeout:                        "5s",
-		Interval:                       "5s",
-		DeregisterCriticalServiceAfter: "60s",
-	}
+	// check := &api.AgentServiceCheck{
+	// 	GRPC:                           fmt.Sprintf("%s:%d", "10.66.58.204", *Port),
+	// 	Timeout:                        "5s",
+	// 	Interval:                       "5s",
+	// 	DeregisterCriticalServiceAfter: "60s",
+	// }
 
 	//生成注册对象
 	serviceID := fmt.Sprintf("%s", uuid.NewV4())
@@ -65,8 +67,8 @@ func main() {
 		ID:      serviceID,
 		Port:    *Port,
 		Tags:    []string{"user", "srv"},
-		Address: "127.0.0.1",
-		Check:   check,
+		Address: "10.66.58.204",
+		// Check:   check,
 	}
 	//1. 如何启动两个服务
 	//2. 即使我能够通过终端启动两个服务，但是注册到consul中的时候也会被覆盖

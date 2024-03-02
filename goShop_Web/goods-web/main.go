@@ -2,6 +2,9 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/satori/go.uuid"
 	"go.uber.org/zap"
@@ -35,7 +38,18 @@ func main() {
 	}
 	zap.S().Debug("Run the Web server，Port：%d", global.ServerConfig.Port) //它返回的就是一个全局的sugar logger，和上边的代码是等价的
 
-	if err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.Port)); err != nil {
-		zap.S().Panicf("启动失败", err.Error())
+	go func() {
+		if err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.Port)); err != nil {
+			zap.S().Panicf("启动失败", err.Error())
+		}
+	}()
+
+	quit := make(chan os.Signal)
+	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+	<-quit
+	if err = registerClient.DeRegister(serviceId); err != nil {
+		zap.S().Info("注销失败", err)
+	} else {
+		zap.S().Info("注销成功")
 	}
 }

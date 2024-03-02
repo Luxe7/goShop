@@ -9,7 +9,7 @@ import (
 	"syscall"
 
 	"github.com/hashicorp/consul/api"
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/health"
@@ -23,7 +23,7 @@ import (
 )
 
 func main() {
-	IP := flag.String("ip", "127.0.0.1", "IP地址")
+	IP := flag.String("ip", "10.66.58.204", "IP地址")
 	Port := flag.Int("port", 0, "端口号")
 
 	initialize.InitLogger()
@@ -38,7 +38,7 @@ func main() {
 	zap.S().Info("Port:", *Port)
 
 	server := grpc.NewServer()
-	proto.RegisterGoodsServer(server, &handler.UserServer{})
+	proto.RegisterGoodsServer(server, &handler.GoodsServer{})
 
 	//注册服务健康检查
 	grpc_health_v1.RegisterHealthServer(server, health.NewServer())
@@ -52,12 +52,12 @@ func main() {
 		panic(err)
 	}
 	//生成对应的检查对象
-	check := &api.AgentServiceCheck{
-		GRPC:                           fmt.Sprintf("%s:%d", "127.0.0.1", *Port),
-		Timeout:                        "5s",
-		Interval:                       "5s",
-		DeregisterCriticalServiceAfter: "60s",
-	}
+	// check := &api.AgentServiceCheck{
+	// 	GRPC:                           fmt.Sprintf("%s:%d", "10.66.58.204", *Port),
+	// 	Timeout:                        "5s",
+	// 	Interval:                       "5s",
+	// 	DeregisterCriticalServiceAfter: "60s",
+	// }
 
 	//生成注册对象
 	serviceID := fmt.Sprintf("%s", uuid.NewV4())
@@ -65,9 +65,9 @@ func main() {
 		Name:    global.ServerConfig.Name,
 		ID:      serviceID,
 		Port:    *Port,
-		Tags:    []string{"user", "srv"},
-		Address: "127.0.0.1",
-		Check:   check,
+		Tags:    []string{"goods", "srv"},
+		Address: "10.66.58.204",
+		// Check:   check,
 	}
 	//1. 如何启动两个服务
 	//2. 即使我能够通过终端启动两个服务，但是注册到consul中的时候也会被覆盖
@@ -93,7 +93,7 @@ func main() {
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 	if err = client.Agent().ServiceDeregister(serviceID); err != nil {
-		zap.S().Info("注销失败")
+		zap.S().Info("注销失败", err)
 	} else {
 		zap.S().Info("注销成功")
 	}
