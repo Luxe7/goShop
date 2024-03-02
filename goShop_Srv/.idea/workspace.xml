@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GoodsSrv/handler/base.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/banner.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/brands.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/category.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/category.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/gategory_brand.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/goods.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,24 +41,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/fathe",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fathe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />

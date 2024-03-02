@@ -2,6 +2,7 @@ package handler
 
 import (
 	"context"
+	"encoding/json"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -12,64 +13,83 @@ import (
 	"goShop/GoodsSrv/proto"
 )
 
-func (s *GoodsServer) BannerList(ctx context.Context, req *emptypb.Empty) (*proto.BannerListResponse, error) {
-	bannerListResponse := proto.BannerListResponse{}
+func (s *GoodsServer) GetAllCategorysList(ctx context.Context, req *emptypb.Empty) (*proto.CategoryListResponse, error) {
+	resp := &proto.CategoryListResponse{}
+	var categorys []model.Category
+	global.DB.Where(&model.Category{Level: 1}).Preload("SubCategory.SubCategory").Find(&categorys)
+	b, _ := json.Marshal(&categorys)
+	resp.JsonData = string(b)
+	//resp的其他字段都是空的
+	return resp, nil
+}
 
-	var banners []model.Banner
-	result := global.DB.Find(&banners)
-	bannerListResponse.Total = int32(result.RowsAffected)
-
-	var bannerReponses []*proto.BannerResponse
-	for _, banner := range banners {
-		bannerReponses = append(bannerReponses, &proto.BannerResponse{
-			Id:    banner.ID,
-			Image: banner.Image,
-			Index: banner.Index,
-			Url:   banner.Url,
+func (s *GoodsServer) GetSubCategory(ctx context.Context, req *proto.CategoryListRequest) (*proto.SubCategoryListResponse, error) {
+	resp := &proto.SubCategoryListResponse{}
+	var category model.Category
+	if result := global.DB.First(&category, req.Id); result.RowsAffected == 0 {
+		return nil, status.Errorf(codes.NotFound, "商品分类不存在")
+	}
+	resp.Info = &proto.CategoryInfoResponse{
+		Id:             category.ID,
+		Name:           category.Name,
+		ParentCategory: category.ParentCategoryID,
+		Level:          category.Level,
+		IsTab:          category.IsTab,
+	}
+	var categorys []model.Category
+	global.DB.Where(&model.Category{Level: 1}).Find(&categorys)
+	for _, category := range categorys {
+		resp.SubCategorys = append(resp.SubCategorys, &proto.CategoryInfoResponse{
+			Id:             category.ID,
+			Name:           category.Name,
+			ParentCategory: category.ParentCategoryID,
+			Level:          category.Level,
+			IsTab:          category.IsTab,
 		})
 	}
+	return resp, nil
 
-	bannerListResponse.Data = bannerReponses
-
-	return &bannerListResponse, nil
 }
-
-func (s *GoodsServer) CreateBanner(ctx context.Context, req *proto.BannerRequest) (*proto.BannerResponse, error) {
-	banner := model.Banner{}
-
-	banner.Image = req.Image
-	banner.Index = req.Index
-	banner.Url = req.Url
-	global.DB.Save(&banner)
-
-	return &proto.BannerResponse{Id: banner.ID}, nil
+func (s *GoodsServer) CreateCategory(ctx context.Context, req *proto.CategoryInfoRequest) (*proto.CategoryInfoResponse, error) {
+	resp := &proto.CategoryInfoResponse{}
+	if result := global.DB.First(&model.Category{}, req.Id); result.RowsAffected != 0 {
+		return nil, status.Errorf(codes.AlreadyExists, "已存在该商品目录")
+	}
+	category := model.Category{
+		Name:             req.Name,
+		ParentCategoryID: req.ParentCategory,
+		Level:            req.Level,
+		IsTab:            req.IsTab,
+	}
+	global.DB.Save(&category)
+	resp.Id = category.ID
+	return resp, nil
 }
-
-func (s *GoodsServer) DeleteBanner(ctx context.Context, req *proto.BannerRequest) (*emptypb.Empty, error) {
-	if result := global.DB.Delete(&model.Banner{}, req.Id); result.RowsAffected == 0 {
-		return nil, status.Errorf(codes.NotFound, "轮播图不存在")
+func (s *GoodsServer) DeleteCategory(ctx context.Context, req *proto.DeleteCategoryRequest) (*emptypb.Empty, error) {
+	if result := global.DB.Delete(&model.Category{}, req.Id); result.RowsAffected == 0 {
+		return nil, status.Errorf(codes.NotFound, "商品分类不存在")
 	}
 	return &emptypb.Empty{}, nil
 }
-
-func (s *GoodsServer) UpdateBanner(ctx context.Context, req *proto.BannerRequest) (*emptypb.Empty, error) {
-	var banner model.Banner
-
-	if result := global.DB.First(&banner, req.Id); result.RowsAffected == 0 {
-		return nil, status.Errorf(codes.NotFound, "轮播图不存在")
+func (s *GoodsServer) UpdateCategory(ctx context.Context, req *proto.CategoryInfoRequest) (*emptypb.Empty, error) {
+	if result := global.DB.Delete(&model.Category{}, req.Id); result.RowsAffected == 0 {
+		return nil, status.Errorf(codes.NotFound, "商品分类不存在")
+	}
+	category := model.Category{}
+	if req.Name != "" {
+		category.Name = req.Name
+	}
+	if req.ParentCategory != 0 {
+		category.ParentCategoryID = req.ParentCategory
+	}
+	if req.Level != 0 {
+		category.Level = req.Level
+	}
+	if req.IsTab {
+		category.IsTab = req.IsTab
 	}
 
-	if req.Url != "" {
-		banner.Url = req.Url
-	}
-	if req.Image != "" {
-		banner.Image = req.Image
-	}
-	if req.Index != 0 {
-		banner.Index = req.Index
-	}
-
-	global.DB.Save(&banner)
+	global.DB.Save(&category)
 
 	return &emptypb.Empty{}, nil
 }

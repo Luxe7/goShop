@@ -2,10 +2,10 @@ package handler
 
 import (
 	"context"
+
 	"go.uber.org/zap"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-
 	"google.golang.org/protobuf/types/known/emptypb"
 
 	"goShop/GoodsSrv/global"
@@ -20,7 +20,7 @@ func (s *GoodsServer) BrandList(ctx context.Context, req *proto.BrandFilterReque
 	result := global.DB.Scopes(Paginate(int(req.Pages), int(req.PagePerNums))).Find(&brands)
 	if result.Error != nil {
 		zap.S().Error("[BrandList]", result.Error)
-		return nil, status.Error(codes.Internal, "DB find fail")
+		return nil, status.Error(codes.Internal, "内部错误")
 	}
 	var total int64
 	global.DB.Model(&model.Brands{}).Count(&total)
@@ -41,7 +41,7 @@ func (s *GoodsServer) BrandList(ctx context.Context, req *proto.BrandFilterReque
 func (s *GoodsServer) CreateBrand(ctx context.Context, req *proto.BrandRequest) (*proto.BrandInfoResponse, error) {
 	resp := &proto.BrandInfoResponse{}
 	if result := global.DB.First(&model.Brands{}, req.Id); result.RowsAffected != 0 {
-		return nil, status.Error(codes.InvalidArgument, "brand is exist")
+		return nil, status.Error(codes.InvalidArgument, "品牌已存在")
 	}
 	brand := model.Brands{
 		Name: req.Name,
@@ -54,14 +54,14 @@ func (s *GoodsServer) CreateBrand(ctx context.Context, req *proto.BrandRequest) 
 }
 func (s *GoodsServer) DeleteBrand(ctx context.Context, req *proto.BrandRequest) (*emptypb.Empty, error) {
 	if result := global.DB.Delete(&model.Brands{}, req.Id); result.RowsAffected == 0 {
-		return nil, status.Errorf(codes.NotFound, "brand is not exist")
+		return nil, status.Errorf(codes.NotFound, "品牌不存在")
 	}
-	return nil, nil
+	return &emptypb.Empty{}, nil
 }
 func (s *GoodsServer) UpdateBrand(ctx context.Context, req *proto.BrandRequest) (*emptypb.Empty, error) {
 	brand := model.Brands{}
 	if result := global.DB.First(&brand, req.Id); result.RowsAffected != 0 {
-		return nil, status.Error(codes.InvalidArgument, "brand is exist")
+		return nil, status.Error(codes.InvalidArgument, "品牌已存在")
 	}
 	if req.Name != "" {
 		brand.Name = req.Name
@@ -70,5 +70,5 @@ func (s *GoodsServer) UpdateBrand(ctx context.Context, req *proto.BrandRequest) 
 		brand.Logo = req.Logo
 	}
 	global.DB.Save(&brand)
-	return nil, nil
+	return &emptypb.Empty{}, nil
 }

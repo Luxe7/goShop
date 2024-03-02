@@ -5,8 +5,9 @@ type Category struct {
 	Name             string `gorm:"type:varchar(20);not null"`
 	ParentCategoryID int32
 	ParentCategory   *Category
-	Level            int32 `gorm:"type:int;not null;default:1"`
-	IsTab            bool  `gorm:"default:false;not null"`
+	SubCategory      []*Category `gorm:"foreignKey:ParentCategoryID;references:ID"`
+	Level            int32       `gorm:"type:int;not null;default:1"`
+	IsTab            bool        `gorm:"default:false;not null"`
 }
 
 type Brands struct {
