@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="" />
+    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/utils/register/consul/register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/config-debug.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/global/global.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/handler/inventory.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/initialize/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/initialize/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/initialize/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/model/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/model/inventory.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/model/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/proto/inventory.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/proto/inventory.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/proto/inventory_grpc.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/utils/addr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/utils/redis_lock/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InventorySrv/utils/register/consul/register.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserSrv/utils/register/consul/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/global/global.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/global/global.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/initialize/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/initialize/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/initialize/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/initialize/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/proto/goods_grpc.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tests/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/tests/goods.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/cache/config/user-srv.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/tmp/nacos/cache/config/user-srv.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/UserSrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,30 +69,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fathe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/Go_projects/goShop/goShop_Srv/GoodsSrv/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Go_projects\goShop\goShop_Srv\GoodsSrv\utils" />
+      <recent name="D:\Go_projects\goShop\goShop_Srv\UserSrv\utils" />
+      <recent name="D:\Go_projects\goShop\goShop_Srv" />
       <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build goShop/GoodsSrv/model/main">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build goShop/GoodsSrv/model/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
@@ -60,6 +103,15 @@
       <package value="goShop/GoodsSrv/model/main" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/GoodsSrv/model/main/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -82,8 +134,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build goShop/GoodsSrv/model/main" />
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build goShop/GoodsSrv/model/main" />
         <item itemvalue="Go Build.go build user.go" />
       </list>
     </recent_temporary>

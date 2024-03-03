@@ -1,5 +1,7 @@
 {
   "name": "user-srv",
+  "host":"10.66.58.204",
+  "tags":["user","srv"],
   "mysql": {
     "host": "127.0.0.1",
     "port": 3306,
