@@ -9,9 +9,9 @@ import (
 	"github.com/satori/go.uuid"
 	"go.uber.org/zap"
 
-	"goShop_Web/global"
-	"goShop_Web/initialize"
-	"goShop_Web/utils/register/consul"
+	"goShop_Web/goods-web/global"
+	"goShop_Web/goods-web/initialize"
+	"goShop_Web/goods-web/utils/register/consul"
 )
 
 func main() {
