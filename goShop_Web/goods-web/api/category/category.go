@@ -48,7 +48,6 @@ func Detail(ctx *gin.Context) {
 		api.HandleGrpcErrorToHttp(err, ctx)
 		return
 	} else {
-		//写文档 特别是数据多的时候很慢， 先开发后写文档
 		for _, value := range r.SubCategorys {
 			subCategorys = append(subCategorys, map[string]interface{}{
 				"id":              value.Id,
@@ -106,9 +105,6 @@ func Delete(ctx *gin.Context) {
 		return
 	}
 
-	//1. 先查询出该分类写的所有子分类
-	//2. 将所有的分类全部逻辑删除
-	//3. 将该分类下的所有的商品逻辑删除
 	_, err = global.GoodsSrvClient.DeleteCategory(context.Background(), &proto.DeleteCategoryRequest{Id: int32(i)})
 	if err != nil {
 		api.HandleGrpcErrorToHttp(err, ctx)

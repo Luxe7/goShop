@@ -30,8 +30,13 @@ type ServerConfig struct {
 	JWTInfo      JWTConfig      `mapstructure:"jwt" json:"jwt"`
 	RedisInfo    RedisConfig    `mapstructure:"redis" json:"redis"`
 	ConsulInfo   ConsulConfig   `mapstructure:"consul" json:"consul"`
+	JaegerInfo   JaegerConfig   `mapstructure:"consul" json:"jaeger"`
 }
-
+type JaegerConfig struct {
+	Host string `mapstructure:"host" json:"host"`
+	Port int    `mapstructure:"port" json:"port"`
+	Name string `mapstructure:"name" json:"name"`
+}
 type NacosConfig struct {
 	Host      string `mapstructure:"host"`
 	Port      uint64 `mapstructure:"port"`
