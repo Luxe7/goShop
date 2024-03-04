@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/InventorySrv/tmp/nacos/cache/config/inventory-srv.json@@dev@@59820980-0119-498f-8c26-6b14a42cf9b4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/nacos/cache/config/inventory-srv.json@@dev@@59820980-0119-498f-8c26-6b14a42cf9b4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/config-debug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/config-debug.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InventorySrv/handler/inventory.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/handler/inventory.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/initialize/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/initialize/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/model/main/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/utils/redis_lock/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/utils/redis_lock/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

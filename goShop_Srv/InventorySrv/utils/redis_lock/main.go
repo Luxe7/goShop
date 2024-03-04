@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"sync"
 	"time"
 
 	goredislib "github.com/go-redis/redis/v8"
 	"github.com/go-redsync/redsync/v4"
 	"github.com/go-redsync/redsync/v4/redis/goredis/v8"
-	"sync"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 
 	var wg sync.WaitGroup
 	wg.Add(gNum)
-	for i :=0 ;i<gNum;i++ {
+	for i := 0; i < gNum; i++ {
 		go func() {
 			defer wg.Done()
 			mutex := rs.NewMutex(mutexname)
@@ -44,7 +44,7 @@ func main() {
 
 			fmt.Println("获取锁成功")
 
-			time.Sleep(time.Second*8)
+			time.Sleep(time.Second * 8)
 
 			fmt.Println("开始释放锁")
 			if ok, err := mutex.Unlock(); !ok || err != nil {
