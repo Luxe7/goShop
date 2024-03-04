@@ -65,7 +65,7 @@ func TestReback() {
 
 func Init() {
 	var err error
-	conn, err = grpc.Dial("127.0.0.1:50051", grpc.WithInsecure())
+	conn, err = grpc.Dial("127.0.0.1:50053", grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
@@ -75,17 +75,17 @@ func Init() {
 func main() {
 	Init()
 	//var i int32
-	//for i = 421; i<=840; i++ {
+	//for i = 421; i <= 840; i++ {
 	//	TestSetInv(i, 100)
 	//}
 	//并发情况之下 库存无法正确的扣减
-	var wg sync.WaitGroup
-	wg.Add(20)
-	for i := 0; i < 20; i++ {
-		go TestSell(&wg)
-	}
-
-	wg.Wait()
+	//var wg sync.WaitGroup
+	//wg.Add(20)
+	//for i := 0; i < 20; i++ {
+	//	go TestSell(&wg)
+	//}
+	//
+	//wg.Wait()
 
 	//TestInvDetail(421)
 	//TestSell()

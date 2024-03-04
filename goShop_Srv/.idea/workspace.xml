@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/InventorySrv/tmp/nacos/cache/config/inventory-srv.json@@dev@@59820980-0119-498f-8c26-6b14a42cf9b4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/nacos/cache/config/inventory-srv.json@@dev@@59820980-0119-498f-8c26-6b14a42cf9b4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/config-debug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/config-debug.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/handler/inventory.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/handler/inventory.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InventorySrv/initialize/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/initialize/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InventorySrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/model/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +67,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go (1)">
-    <configuration name="go build goShop/GoodsSrv/model/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goShop" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goShop/InventorySrv/tests/inventory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="goShop/GoodsSrv/model/main" />
+      <package value="goShop/InventorySrv/tests/inventory" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/GoodsSrv/model/main/main.go" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -75,7 +91,16 @@
       <kind value="FILE" />
       <package value="goShop" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/InventorySrv/main.go" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/model/main/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -87,21 +112,29 @@
       <filePath value="$PROJECT_DIR$/UserSrv/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build user.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <package value="goShop" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/UserSrv/tests/user.go" />
+      <filePath value="$PROJECT_DIR$/InventorySrv/main.go" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
+      <item itemvalue="Go Build.go build main.go (1)" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build goShop" />
+      <item itemvalue="Go Build.go build main.go (2)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build goShop/GoodsSrv/model/main" />
-        <item itemvalue="Go Build.go build user.go" />
+        <item itemvalue="Go Build.go build goShop" />
+        <item itemvalue="Go Build.go build main.go (2)" />
       </list>
     </recent_temporary>
   </component>

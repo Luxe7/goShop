@@ -22,7 +22,7 @@ func GetEnvInfo(env string) bool {
 func InitConfig() {
 	//从配置文件中读取出对应的配置
 	configFilePrefix := "config"
-	configFileName := fmt.Sprintf("InventorySrv/%s-debug.yaml", configFilePrefix)
+	configFileName := fmt.Sprintf("./%s-debug.yaml", configFilePrefix)
 
 	v := viper.New()
 	//文件的路径如何设置

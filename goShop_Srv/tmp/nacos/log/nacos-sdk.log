@@ -1,1 +1,16 @@
 2024-03-03T20:57:09.307+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2024-03-04T16:22:44.903+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2024-03-04T16:24:14.298+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2024-03-04T16:24:14.321+0800	[31mERROR[0m	nacos_server/nacos_server.go:199	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"inventory-srv.json","group":"dev","tenant":"59820980-0119-498f-8c26-6b14a42cf9b4"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2024-03-04T16:24:14.341+0800	[31mERROR[0m	nacos_server/nacos_server.go:199	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"inventory-srv.json","group":"dev","tenant":"59820980-0119-498f-8c26-6b14a42cf9b4"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2024-03-04T16:24:14.369+0800	[31mERROR[0m	nacos_server/nacos_server.go:199	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"inventory-srv.json","group":"dev","tenant":"59820980-0119-498f-8c26-6b14a42cf9b4"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2024-03-04T16:24:14.369+0800	[31mERROR[0m	config_client/config_client.go:202	get config from server error:[404] config data not exist
+ 
+2024-03-04T16:24:14.369+0800	[33mWARN[0m	config_client/config_client.go:207	[client.GetConfig] config not found, dataId: inventory-srv.json, group: dev, namespaceId: 59820980-0119-498f-8c26-6b14a42cf9b4.
+2024-03-04T16:25:00.113+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
