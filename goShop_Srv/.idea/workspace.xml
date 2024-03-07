@@ -4,7 +4,62 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="" />
+    <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/OrderSrv/config-debug.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/config-pro.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/config/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/global/global.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/handler/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/handler/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/initialize/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/initialize/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/initialize/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/initialize/srv_conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/install.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/model/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/model/main/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/model/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/goods.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/goods.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/inventory.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/inventory.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/order.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/proto/order.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/rocketmq_test/consumer/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/rocketmq_test/delay/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/rocketmq_test/simple/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/rocketmq_test/transaction/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/tests/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/addr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/errors_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/package.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/shared.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/test/interceptor_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/test/otgrpc_testing/test.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/otgrpc/test/otgrpc_testing/test.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/redis_lock/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderSrv/utils/register/consul/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/goods-srv.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/user-srv.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/cache/config/user-srv.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/cache/config/user-web.json@@dev@@fa682244-40b3-43b8-abf7-b912b7e0a82a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSrv/tmp/nacos/log/nacos-sdk.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/nacos/cache/config/inventory-srv.json@@dev@@59820980-0119-498f-8c26-6b14a42cf9b4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/nacos/log/nacos-sdk.log" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +96,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Go_projects/goShop/goShop_Srv/GoodsSrv/utils&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Go_projects/goShop/goShop_Srv/OrderSrv&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -49,22 +104,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Go_projects\goShop\goShop_Srv\OrderSrv" />
       <recent name="D:\Go_projects\goShop\goShop_Srv\GoodsSrv\utils" />
       <recent name="D:\Go_projects\goShop\goShop_Srv\UserSrv\utils" />
       <recent name="D:\Go_projects\goShop\goShop_Srv" />
       <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (1)">
-    <configuration name="go build goShop" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goShop_Srv" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <package value="goShop" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/InventorySrv/main.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go (2)">
     <configuration name="go build goShop/InventorySrv/tests/inventory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
@@ -89,7 +136,16 @@
       <kind value="FILE" />
       <package value="goShop" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/InventorySrv/model/main/main.go" />
+      <filePath value="$PROJECT_DIR$/OrderSrv/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go (3)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/OrderSrv/model/main/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -111,19 +167,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build main.go (3)" />
       <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
       <item itemvalue="Go Build.go build main.go (1)" />
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Build.go build goShop" />
       <item itemvalue="Go Build.go build main.go (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go (2)" />
+        <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go (1)" />
         <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build goShop" />
-        <item itemvalue="Go Build.go build main.go (2)" />
       </list>
     </recent_temporary>
   </component>
