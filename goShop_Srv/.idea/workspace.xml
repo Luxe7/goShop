@@ -5,37 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Userop_srv/config-debug.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/config-pro.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/global/global.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/handler/address.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/handler/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/handler/message.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/handler/userfav.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/initialize/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/initialize/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/initialize/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/model/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/model/main/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/model/userop.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/address.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/address.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/message.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/message.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/userfav.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/proto/userfav.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/tests/userop.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/utils/addr.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/utils/redis_lock/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Userop_srv/utils/register/consul/register.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderSrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/OrderSrv/model/main/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/order-web/api/order/order.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/order-web/api/order/order.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../goShop_Web/order-web/api/pay/alipay.go" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/order-web/api/pay/alipay.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
