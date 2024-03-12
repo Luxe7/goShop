@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin/binding"
-	ut "github.com/go-playground/universal-translator"
-	"github.com/go-playground/validator/v10"
 	"os"
 	"os/signal"
 	"syscall"
 
+	"github.com/gin-gonic/gin/binding"
+	ut "github.com/go-playground/universal-translator"
+	"github.com/go-playground/validator/v10"
 	"github.com/satori/go.uuid"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"

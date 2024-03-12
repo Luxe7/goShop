@@ -45,17 +45,6 @@ func List(ctx *gin.Context) {
 		api.HandleGrpcErrorToHttp(err, ctx)
 		return
 	}
-
-	/*
-		{
-			"total":100,
-			"data":[
-				{
-					"
-				}
-			]
-		}
-	*/
 	reMap := gin.H{
 		"total": rsp.Total,
 	}
