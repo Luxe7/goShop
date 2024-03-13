@@ -50,12 +50,7 @@ func (EsGoods) GetMapping() string {
 			},
 			"name": {
 				"type": "text",
-				"analyzer": "ik_max_word",
-				"fields": {“
-					keyword ":{
-					"type": "keyword",
-					"ignore_above": 256
-				}
+				"analyzer": "ik_max_word"
 			}
 		},
 		"goods_brief": {
@@ -75,7 +70,6 @@ func (EsGoods) GetMapping() string {
 			"type": "long"
 		}
 	}
-}
 }`
 	return goodsMapping
 }

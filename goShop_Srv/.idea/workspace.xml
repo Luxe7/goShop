@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0925a72d-5d61-4f80-a83c-1dd360bb250b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/cache/config/goods-srv.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GoodsSrv/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/handler/goods.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/initialize/es.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/initialize/es.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoodsSrv/model/es_goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/es_goods.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/GoodsSrv/model/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/goods-web/tmp/nacos/cache/config/goods-web.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/goods-web/tmp/nacos/cache/config/goods-web.json@@dev@@80772345-689b-4cb9-b755-201171c2f9d9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../goShop_Web/goods-web/tmp/nacos/log/nacos-sdk.log" beforeDir="false" afterPath="$PROJECT_DIR$/../goShop_Web/goods-web/tmp/nacos/log/nacos-sdk.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +28,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../Program Files/Go" />
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -30,6 +37,7 @@
   </component>
   <component name="ProjectId" id="2cLlI5ksdjBHjoyymIRrCHvARQ9" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -63,16 +71,7 @@
       <recent name="C:\Users\Administrator\Desktop\my\goShop\goShop_Srv\GoodsSrv\proto" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go (2)">
-    <configuration name="go build goShop/InventorySrv/tests/inventory" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goShop_Srv" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="goShop/InventorySrv/tests/inventory" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/InventorySrv/tests/inventory/main.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
@@ -100,13 +99,22 @@
       <filePath value="$PROJECT_DIR$/OrderSrv/model/main/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build main.go (4)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goShop_Srv" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="goShop" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/GoodsSrv/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goShop_Srv" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <package value="goShop" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/UserSrv/main.go" />
+      <filePath value="$PROJECT_DIR$/GoodsSrv/model/main/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -119,19 +127,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build main.go (4)" />
       <item itemvalue="Go Build.go build main.go (3)" />
-      <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
       <item itemvalue="Go Build.go build main.go (1)" />
       <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Build.go build main.go (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go (2)" />
         <item itemvalue="Go Build.go build main.go (3)" />
         <item itemvalue="Go Build.go build main.go (1)" />
-        <item itemvalue="Go Build.go build goShop/InventorySrv/tests/inventory" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>

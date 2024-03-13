@@ -13,7 +13,7 @@ import (
 )
 
 func InitEs() {
-	host := fmt.Sprintf("https://%s:%d", global.ServerConfig.EsInfo.Host, global.ServerConfig.EsInfo.Port)
+	host := fmt.Sprintf("http://%s:%d", global.ServerConfig.EsInfo.Host, global.ServerConfig.EsInfo.Port)
 	logger := log.New(os.Stdout, "goShop", log.LstdFlags)
 	var err error
 
