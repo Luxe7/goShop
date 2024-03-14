@@ -20,7 +20,6 @@ func GetEnvInfo(env string) bool {
 func InitConfig() {
 	configFilePrefix := "config"
 	configFileName := fmt.Sprintf("%s-debug.yaml", configFilePrefix)
-
 	v := viper.New()
 	//文件的路径如何设置
 	v.SetConfigFile(configFileName)
