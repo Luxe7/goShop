@@ -211,7 +211,7 @@ func (o *OrderListener) ExecuteLocalTransaction(msg *primitive.Message) primitiv
 	if err != nil {
 		o.Code = codes.Internal
 		o.Detail = "批量查询商品信息失败"
-		return primitive.RollbackMessageState
+		return primitive.RollbackMessageState //在实际执行sell之前，都没有必要撤销库存，因为库存还没有扣减，直接将消息撤回即可
 	}
 	queryGoodsSpan.Finish()
 
@@ -343,7 +343,7 @@ func (*OrderServer) CreateOrder(ctx context.Context, req *proto.OrderRequest) (*
 	orderListener := OrderListener{Ctx: ctx}
 	p, err := rocketmq.NewTransactionProducer(
 		&orderListener,
-		producer.WithNameServer([]string{"192.168.0.104:9876"}),
+		producer.WithNameServer([]string{"192.168.171.130:9876"}),
 	)
 	if err != nil {
 		zap.S().Errorf("生成producer失败: %s", err.Error())
