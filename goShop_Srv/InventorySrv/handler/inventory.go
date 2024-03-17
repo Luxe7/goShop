@@ -48,7 +48,7 @@ func (*InventoryServer) InvDetail(ctx context.Context, req *proto.GoodsInvInfo) 
 func (*InventoryServer) Sell(ctx context.Context, req *proto.SellInfo) (*emptypb.Empty, error) {
 
 	client := goredislib.NewClient(&goredislib.Options{
-		Addr: "192.168.0.104:6379",
+		Addr: "192.168.171.130:6379",
 	})
 	pool := goredis.NewPool(client) // or, pool := redigo.NewPool(...)
 	rs := redsync.New(pool)
@@ -57,10 +57,10 @@ func (*InventoryServer) Sell(ctx context.Context, req *proto.SellInfo) (*emptypb
 
 	//这个时候应该先查询表，然后确定这个订单是否已经扣减过库存了，已经扣减过了就别扣减了
 	//并发时候会有漏洞， 同一个时刻发送了重复了多次， 使用锁，分布式锁
-	//sellDetail := model.StockSellDetail{
-	//	OrderSn: req.OrderSn,
-	//	Status:  1,
-	//}
+	sellDetail := model.StockSellDetail{
+		OrderSn: req.OrderSn,
+		Status:  1,
+	}
 	var details []model.GoodsDetail
 	for _, goodInfo := range req.GoodsInfo {
 		details = append(details, model.GoodsDetail{
@@ -92,12 +92,12 @@ func (*InventoryServer) Sell(ctx context.Context, req *proto.SellInfo) (*emptypb
 			return nil, status.Errorf(codes.Internal, "释放redis分布式锁异常")
 		}
 	}
-	//sellDetail.Detail = details
+	sellDetail.Detail = details
 	//写selldetail表
-	//if result := tx.Create(&sellDetail); result.RowsAffected == 0 {
-	//	tx.Rollback()
-	//	return nil, status.Errorf(codes.Internal, "保存库存扣减历史失败")
-	//}
+	if result := tx.Create(&sellDetail); result.RowsAffected == 0 {
+		tx.Rollback()
+		return nil, status.Errorf(codes.Internal, "保存库存扣减历史失败")
+	}
 	tx.Commit() // 需要自己手动提交操作
 
 	return &emptypb.Empty{}, nil
@@ -313,9 +313,6 @@ func AutoReback(ctx context.Context, msgs ...*primitive.MessageExt) (consumer.Co
 		OrderSn string
 	}
 	for i := range msgs {
-		//既然是归还库存，那么我应该具体的知道每件商品应该归还多少， 但是有一个问题是什么？重复归还的问题
-		//所以说这个接口应该确保幂等性， 你不能因为消息的重复发送导致一个订单的库存归还多次， 没有扣减的库存你别归还
-		//如果确保这些都没有问题， 新建一张表， 这张表记录了详细的订单扣减细节，以及归还细节
 		var orderInfo OrderInfo
 		err := json.Unmarshal(msgs[i].Body, &orderInfo)
 		if err != nil {
@@ -323,15 +320,12 @@ func AutoReback(ctx context.Context, msgs ...*primitive.MessageExt) (consumer.Co
 			return consumer.ConsumeSuccess, nil
 		}
 
-		//去将inv的库存加回去 将selldetail的status设置为2， 要在事务中进行
 		tx := global.DB.Begin()
 		var sellDetail model.StockSellDetail
 		if result := tx.Model(&model.StockSellDetail{}).Where(&model.StockSellDetail{OrderSn: orderInfo.OrderSn, Status: 1}).First(&sellDetail); result.RowsAffected == 0 {
 			return consumer.ConsumeSuccess, nil
 		}
-		//如果查询到那么逐个归还库存
 		for _, orderGood := range sellDetail.Detail {
-			//update怎么用
 			//先查询一下inventory表在， update语句的 update xx set stocks=stocks+2
 			if result := tx.Model(&model.Inventory{}).Where(&model.Inventory{Goods: orderGood.Goods}).Update("stocks", gorm.Expr("stocks+?", orderGood.Num)); result.RowsAffected == 0 {
 				tx.Rollback()

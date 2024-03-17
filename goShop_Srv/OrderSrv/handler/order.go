@@ -290,7 +290,7 @@ func (o *OrderListener) ExecuteLocalTransaction(msg *primitive.Message) primitiv
 	deleteShopCartSpan.Finish()
 
 	//发送延时消息
-	p, err := rocketmq.NewProducer(producer.WithNameServer([]string{"192.168.0.104:9876"}))
+	p, err := rocketmq.NewProducer(producer.WithNameServer([]string{"192.168.171.130:9876"}))
 	if err != nil {
 		panic("生成producer失败")
 	}
@@ -301,7 +301,7 @@ func (o *OrderListener) ExecuteLocalTransaction(msg *primitive.Message) primitiv
 	}
 
 	msg = primitive.NewMessage("order_timeout", msg.Body)
-	msg.WithDelayTimeLevel(3)
+	msg.WithDelayTimeLevel(16)
 	_, err = p.SendSync(context.Background(), msg)
 	if err != nil {
 		zap.S().Errorf("发送延时消息失败: %v\n", err)
@@ -388,13 +388,11 @@ func (*OrderServer) UpdateOrderStatus(ctx context.Context, req *proto.OrderStatu
 }
 
 func OrderTimeout(ctx context.Context, msgs ...*primitive.MessageExt) (consumer.ConsumeResult, error) {
-
 	for i := range msgs {
 		var orderInfo model.OrderInfo
 		_ = json.Unmarshal(msgs[i].Body, &orderInfo)
 
 		fmt.Printf("获取到订单超时消息: %v\n", time.Now())
-		//查询订单的支付状态，如果已支付什么都不做，如果未支付，归还库存
 		var order model.OrderInfo
 		if result := global.DB.Model(model.OrderInfo{}).Where(model.OrderInfo{OrderSn: orderInfo.OrderSn}).First(&order); result.RowsAffected == 0 {
 			return consumer.ConsumeSuccess, nil
@@ -406,7 +404,7 @@ func OrderTimeout(ctx context.Context, msgs ...*primitive.MessageExt) (consumer.
 			order.Status = "TRADE_CLOSED"
 			tx.Save(&order)
 
-			p, err := rocketmq.NewProducer(producer.WithNameServer([]string{"192.168.0.104:9876"}))
+			p, err := rocketmq.NewProducer(producer.WithNameServer([]string{"192.168.171.130:9876"}))
 			if err != nil {
 				panic("生成producer失败")
 			}
@@ -421,8 +419,10 @@ func OrderTimeout(ctx context.Context, msgs ...*primitive.MessageExt) (consumer.
 				fmt.Printf("发送失败: %s\n", err)
 				return consumer.ConsumeRetryLater, nil
 			}
-
-			//if err = p.Shutdown(); err != nil {panic("关闭producer失败")}
+			tx.Commit()
+			//if err = p.Shutdown(); err != nil {
+			//	panic("关闭producer失败")
+			//}
 			return consumer.ConsumeSuccess, nil
 		}
 	}
